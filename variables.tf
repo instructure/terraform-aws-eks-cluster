@@ -60,6 +60,10 @@ variable "allowed_security_groups" {
   description = "List of Security Group IDs to be allowed to connect to the EKS cluster"
 }
 
+variable "allowed_security_groups_count" {
+  description = "Count of the allowed Security Groups. Needed to prevent Terraform error `count can't be computed`"
+}
+
 variable "allowed_cidr_blocks" {
   type        = "list"
   default     = []

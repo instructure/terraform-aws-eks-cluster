@@ -72,7 +72,7 @@ resource "aws_security_group_rule" "ingress_workers" {
 }
 
 resource "aws_security_group_rule" "ingress_security_groups" {
-  count                    = "${var.enabled == "true" ? length(var.allowed_security_groups) : 0}"
+  count                    = "${var.enabled == "true" ? var.allowed_security_groups_count : 0}"
   description              = "Allow inbound traffic from existing Security Groups"
   from_port                = 0
   to_port                  = 65535
